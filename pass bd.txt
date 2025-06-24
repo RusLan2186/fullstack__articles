@@ -1,0 +1,4 @@
+H7KPE6BLox4et7po
+
+
+mongodb+srv://admin:H7KPE6BLox4et7po@cluster0.sxtn9qs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
