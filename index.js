@@ -68,10 +68,5 @@ app.post('/posts/:postId/comments', checkAuth, commentCreateValidation, handleVa
 app.get('/posts/:postId/comments', commentsController.getCommentsByPost);
 app.get('/comments/last', commentsController.getLastCommentsGlobal);
 
-app.listen(4444, (err) => {
-  if (err) {
-    console.log(err)
-  }
-  console.log('Server running on port 4444')
-})
-
+const PORT = process.env.PORT || 4444;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
