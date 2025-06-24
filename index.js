@@ -6,6 +6,7 @@ import { handleValidationErrors, checkAuth } from './utils/index.js'
 import dotenv from 'dotenv';
 import multer from 'multer'
 import cors from 'cors'
+import fs from 'fs'
 
 
 mongoose
@@ -17,6 +18,9 @@ const app = express();
 
 const storage = multer.diskStorage({
   destination: (_, __, cb) => {
+    if (!fs.existsSync('uploads')) {
+      { fs.mkdirSync('uploads') }
+    }
     cb(null, 'uploads');
   },
   filename: (_, file, cb) => {
